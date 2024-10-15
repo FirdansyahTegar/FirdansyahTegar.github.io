@@ -1,7 +1,320 @@
-h1 {
-    color: rgb(255, 255, 255);
+body {
+    margin: auto;
+    font-family: 'Helios', sans-serif;
 }
 
-body {
-    background-color: violet;
+nav {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Center the nav */
+    background-color: rgba(51, 51, 51, 0.4); /* Less opaque background */
+    padding: 5px 20px; /* Padding to space out the text inside the nav */
+    border-radius: 25px; /* Rounded corners */
+    display: flex; /* Make the nav size based on its content */
+    transition: top 0.3s; /* Smooth hide and show transition */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 50px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a img {
+    width: 24px; /* Set the width of the icon */
+    height: 24px; /* Set the height of the icon */
+    vertical-align: middle; /* Align the icon with the text */
+}
+
+/* Styling for sections */
+header {
+    height: 100vh;
+    padding-top: 60px;
+}
+
+/* Animation keyframes */
+@keyframes slide-in {
+    from {
+        transform: translateX(-50%); /* Start from right */
+    }
+    to {
+        transform: translateX(0); /* Move to original position */
+    }
+}
+
+.animate-on-scroll {
+    transform: translateX(-50%); /* Start off-screen from the right */
+    transition: transform 1s ease-out;
+}
+
+.animate-on-scroll2 {
+    transform: translateX(50%); /* Start off-screen from the right */
+    transition: transform 1s ease-out;
+}
+
+/* Class to move the elements to their final position */
+.slide-in {
+    transform: translateX(0); /* Move to original position */
+}
+
+.header-buttons {
+    display: flex;
+    margin-left: 8%;
+    gap: 20px; /* Space between buttons */
+}
+
+/* Common button styling */
+.button {
+    text-decoration: none; /* Remove underline */
+    padding: 10px 3%;    /* Button padding */
+    font-weight: bold;     /* Make text bold */
+    font-size: 16px;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effects */
+    transform: translateX(-50%); /* Start off-screen */
+    animation: slide-in 1.2s forwards; /* Apply the animation */
+}
+
+/* Specific styles for 'LIST YOUR HOME' button with transparent background */
+.list-home {
+    background-color: transparent; /* Transparent background */
+    color: white;                  /* White text */
+    border: 2px solid white;        /* White border */
+}
+
+/* Hover effect for 'LIST YOUR HOME' button */
+.list-home:hover {
+    background-color: white; /* Change to white on hover */
+    color: black;            /* Text color turns black on hover */
+}
+
+/* Specific styles for 'BUY A HOME' button */
+.buy-home {
+    background-color: white; /* Solid white background */
+    color: black;            /* Black text */
+    border: 2px solid white; /* White border */
+}
+
+/* Hover effect for 'BUY A HOME' button */
+.buy-home:hover {
+    background-color: black; /* Change to black on hover */
+    color: white;            /* Text color turns white on hover */
+}
+
+section {
+    height: 100vh; /* Full screen height */
+    padding-top: 60px; /* Padding to avoid overlap with the fixed nav */
+}
+
+/* Different background colors for each section */
+#home {
+    background-color: lightblue;
+    background-image: url('src/bg1.jpg');
+    background-size:cover;
+    
+}
+
+#home p {
+    color: white;
+    font-size:x-large;
+    margin-left: 85px;
+}
+
+#home h1 {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-size: 100px;
+    margin-left: 8%;
+    margin-top: 13%;
+    transform: translateX(-50%); /* Start off-screen */
+    animation: slide-in 1s forwards; /* Apply the animation */
+}
+
+#about {
+    background-color: rgb(255, 253, 251);
+    display: flex;
+}
+
+#about h1{
+    font-family: 'Raleway', sans-serif;
+    margin-left: 7%;
+    font-size: 70px;
+    transform: translateX(-50%); /* Start off-screen */
+    transition: transform 1s ease-out;
+}
+
+#about h1.slide-in {
+    transform: translateX(0); /* Apply animation when class is added */
+}
+
+#about p{
+    text-align: justify;
+    margin: 5%;
+    margin-top: 20%;
+    line-height: 1.5;
+}
+
+#img-about {
+    margin-top: 4%;
+    margin-left: 20%;
+    /* transform: translateX(-50%); /* Start off-screen */
+    /* transition: transform 1s ease-out; */ 
+}
+
+ /* #img-about.slide-in {
+    transform: translateX(0);  Apply animation when class is added 
+} */
+
+#rooms {
+    background-color: beige;
+}
+
+.row1-room {
+    display: flex;
+    margin: 5%;
+    margin-top: 1%;
+    margin-left: 6%;
+    margin-bottom: 1%;
+
+}
+
+.row1-room h1 {
+    font-size: 40px;
+}
+
+.row1-room h2 {
+    color: gray;
+    margin-top: 3%;
+    margin-left: 75%;
+    
+}
+
+.row2-room {
+    display: flex;
+    align-items: center;
+    margin-left: 7%;
+}
+
+.row2-room img{
+    margin: 0 3%;
+}
+
+.row3-room {
+    display: flex;
+    margin: 0 5%;
+}
+
+.row3-room p {
+    font-family: 'Raleway', sans-serif;
+    margin: 1% 6%;
+    margin-left: 5.3%;
+}
+
+#p2-row3 {
+    margin-left: 24%;
+}
+
+#p3-row3 {
+    margin-left: 24%;
+}
+
+#testimonials {
+    background-color: rgb(176, 189, 193);
+    display: flex;
+    padding: 0px 0;         /* Adds padding for vertical spacing */
+}
+
+#testimonials h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 35px;
+    margin-left: 75%;
+    margin-top: 75%;
+    max-width: 100px; 
+}
+
+.testi { 
+   max-width: 700px;
+   margin-top: 10%;
+   margin-left: 20%;
+   line-height: 1.3;
+}
+
+#img-testi {
+    margin-top: 15%;
+    margin-left: 10%;
+    padding-right: 5%;
+}
+
+#contact {
+    background-color: rgb(0, 0, 0);
+    height: 30vh;
+    display: flex;
+}
+
+#contact div h1 {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-size: 50px;
+    margin-left: 15%;
+    /* margin-top: 1%; */
+    padding-right: 10%;
+    width: 300px;
+}
+
+#addrs {
+    padding-left: 27%;
+    padding-top: 1%;
+    font-family: 'Raleway', sans-serif;
+    color: rgba(255, 255, 255, 0.884);
+}
+
+#addrs button {
+    font-size: 10px;
+}
+
+#ico {
+    margin-left: 30%;
+    margin-top: 10%;
+}
+
+#scrollTopBtn {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed position on the screen */
+    bottom: 40px; /* 20px from the bottom */
+    right: 40px; /* 20px from the right edge */
+    z-index: 99; /* Make sure it appears on top of other content */
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+    background-color: rgba(169, 169, 169, 0.65); /* Dark background color */
+    color: rgba(255, 255, 255, 0.7); /* White arrow */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 15px 18px; /* Button padding */
+    border-radius: 35%; /* Make the button circular */
+    font-size: 15px; /* Font size of the arrow */
+}
+
+#scrollTopBtn:hover {
+    background-color: #555; /* Slightly lighter on hover */
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
