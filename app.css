@@ -3,6 +3,10 @@ body {
     font-family: 'Helios', sans-serif;
 }
 
+p {
+    overflow: hidden;
+}
+
 nav {
     position: fixed;
     top: 0;
@@ -63,7 +67,7 @@ header {
 }
 
 .animate-on-scroll2 {
-    transform: translateX(50%); /* Start off-screen from the right */
+    transform: translateX(20%); /* Start off-screen from the right */
     transition: transform 1s ease-out;
 }
 
@@ -101,7 +105,7 @@ header {
 /* Hover effect for 'LIST YOUR HOME' button */
 .list-home:hover {
     background-color: white; /* Change to white on hover */
-    color: black;            /* Text color turns black on hover */
+    color: rgb(0, 0, 0);            /* Text color turns black on hover */
 }
 
 /* Specific styles for 'BUY A HOME' button */
@@ -113,7 +117,7 @@ header {
 
 /* Hover effect for 'BUY A HOME' button */
 .buy-home:hover {
-    background-color: black; /* Change to black on hover */
+    background-color: rgb(146, 146, 146); /* Change to black on hover */
     color: white;            /* Text color turns white on hover */
 }
 
@@ -262,6 +266,8 @@ section {
 }
 
 #contact {
+    padding-top: 0;
+    padding-bottom: 1%;
     background-color: rgb(0, 0, 0);
     height: 30vh;
     display: flex;
@@ -289,8 +295,9 @@ section {
 }
 
 #ico {
-    margin-left: 30%;
+    margin-left: 25%;
     margin-top: 10%;
+    overflow: hidden;
 }
 
 #scrollTopBtn {
@@ -318,3 +325,17 @@ html {
     scroll-behavior: smooth;
 }
 
+@media (max-width: 1285px) {
+
+    #home {
+        background-color: lightblue;
+        background-image: url('src/bg1.jpg');
+        background-size: 100rem;
+        
+    }
+
+    img {
+        overflow: hidden;
+    }
+
+}
